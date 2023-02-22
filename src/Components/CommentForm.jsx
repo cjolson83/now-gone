@@ -2,9 +2,9 @@ import React, { useState, useContext } from "react";
 import TextField from "@mui/material/TextField";
 import { FormControl } from "@mui/material";
 import Fab from "@mui/material/Fab";
-import AddIcon from "@mui/icons-material/Add";
 import axios from "axios";
 import AuthContext from "../store/AuthContext";
+import AddCommentIcon from '@mui/icons-material/AddComment';
 
 const CommentForm = ({place}) => {
   const [comment, setComment] = useState("");
@@ -36,7 +36,7 @@ const CommentForm = ({place}) => {
 
   return (
     <div className="commentform">
-      <FormControl sx={{ width: "91.5%" }}>
+      <FormControl sx={{ width: "92%" }}>
         <TextField
           id="photo_url"
           label="Comment"
@@ -48,11 +48,14 @@ const CommentForm = ({place}) => {
       </FormControl>
       <Fab
         size="medium"
-        color="#424949"
         aria-label="add"
+        style={{
+          backgroundColor: "#424949",
+          color: "antiquewhite",
+        }}
         onClick={handleSubmit}
       >
-        <AddIcon />
+        <AddCommentIcon />
       </Fab>
     </div>
   );

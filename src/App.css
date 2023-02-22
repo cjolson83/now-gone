@@ -88,12 +88,49 @@ body {
   justify-content: space-between;
 }
 
+.placename{
+  font-family: "Sawarabi Mincho", serif;
+  margin-bottom: 10px;
+}
+
 .placeInfo {
-  width: 70%;
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .placeDetail{
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.photo_caption{
+  font-size: 8pt;
+  text-align: left;
+}
+
+.daterange{
+  display: flex;
+  align-items: center;
+  width: 32%;
+  justify-content: space-between;
+}
+
+.addinfo{
+  width: 80%;
+}
+
+.comment{
+  margin: 10px;
+}
+
+.CommentContainer{
+  width: 82%;
+  margin: 25px
+}
+
+.description{
+  width: 80%
 }

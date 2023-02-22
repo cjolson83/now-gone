@@ -15,6 +15,7 @@ import AuthContext from "../store/AuthContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Autocomplete from "../Components/Location";
+import DomainAddIcon from '@mui/icons-material/DomainAdd';
 
 const AddPlace = () => {
   const { token, userId } = useContext(AuthContext);
@@ -230,10 +231,11 @@ const AddPlace = () => {
               variant="contained"
               style={{
                 backgroundColor: "#424949",
+                color: "antiquewhite"
               }}
               onClick={handleSubmit}
             >
-              Submit
+              Submit &nbsp; <DomainAddIcon/>
             </Button>
           </div>
         </Stack>

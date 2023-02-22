@@ -1,9 +1,21 @@
 import React from 'react'
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
+import { styled } from '@mui/material/styles';
+
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor:'antiquewhite',
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
 
 const Comment = ({comments}) => {
   return (
-    <div>
-      <p>{comments.comment}</p>
+    <div className='comment'>
+      <Item>{comments.comment}</Item>
     </div>
   )
 }

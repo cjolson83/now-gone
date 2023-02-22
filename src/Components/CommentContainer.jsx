@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import Comment from "../Components/Comment";
 
+
 const CommentContainer = () => {
   const [comments, setComments] = useState([]);
   const { id } = useParams();
@@ -17,7 +18,7 @@ const CommentContainer = () => {
     return <Comment key={comments.id} comments={comments} />;
   });
 
-  return <div>{commentDisplay}</div>;
+  return <div className="CommentContainer"><p>User Stories</p>{commentDisplay}</div>;
 };
 
 export default CommentContainer;

@@ -5,6 +5,7 @@ import AddPhotos from "./AddPhotos";
 import CommentForm from "./CommentForm";
 import AuthContext from "../store/AuthContext";
 import CommentContainer from "./CommentContainer";
+import HourglassDisabledOutlinedIcon from '@mui/icons-material/HourglassDisabledOutlined';
 
 const PlaceDetail = () => {
   const { id } = useParams();
@@ -20,19 +21,22 @@ const PlaceDetail = () => {
   console.log(place);
   return (
     <div className="placeDetail">
-      <h1>{place.placeName}</h1>
+      <h1 className="placename">{place.placeName}</h1>
       {place.photos &&
         place.photos.map((photos, id) => {
           return <img alt="place" key={photos.id} src={photos.photoURL} />;
         })}
         {place.photos &&
         place.photos.map((photos, id) => {
-          return <p key={photos.id}>{photos.photoCaption}, circa {photos.yearTaken}</p>;
+          return <p className="photo_caption" key={photos.id}>{photos.photoCaption}, circa {photos.yearTaken}</p>;
         })}
       <div className="placeInfo">
       <h3>{place.location}</h3>
+      <div className="daterange">
       <p>Opened: {place.dateOpen}</p>
+      <HourglassDisabledOutlinedIcon/>
       <p>Closed: {place.dateClose}</p>
+      </div>
       {place.buildingStands ? (
         <p>Building still stands today.</p>
       ) : (
@@ -40,9 +44,8 @@ const PlaceDetail = () => {
       )}
       <p>Now in this location: {place.thereNow}</p>
       <p className="description">{place.description}</p>
-      {authCtx.token ? (<div><AddPhotos place={place}/>
-      <CommentForm place={place}/></div>):(null)}
       <CommentContainer place={place}/>
+      {authCtx.token ? (<div className="addinfo"><CommentForm place={place}/><AddPhotos place={place}/></div>):(null)}
       </div>
     </div>
    

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import TextField from "@mui/material/TextField";
 import { FormControl } from "@mui/material";
-import Fab from '@mui/material/Fab';
-import AddIcon from '@mui/icons-material/Add';
+import Fab from "@mui/material/Fab";
+import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
 
 const AddPhotos = () => {
   const [photoURL, setPhotoURL] = useState("");
@@ -11,36 +11,43 @@ const AddPhotos = () => {
 
   return (
     <div className="addphotoform">
-        <FormControl sx={{ width: "40%" }}>
-          <TextField
-            id="photo_url"
-            label="Photo URL"
-            variant="outlined"
-            helperText="Add a photo to the collection"
-            value={photoURL}
-            onChange={(e) => setPhotoURL(e.target.value)}
-          />
-        </FormControl>
-        <FormControl sx={{ width: "30%" }}>
-          <TextField
-            id="photo_caption"
-            label="Photo Caption"
-            variant="outlined"
-            value={photoCaption}
-            onChange={(e) => setPhotoCaption(e.target.value)}
-          />
-        </FormControl>
-        <FormControl sx={{ width: "15%" }}>
-          <TextField
-            id="year_taken"
-            label="Photo Year"
-            variant="outlined"
-            value={yearTaken}
-            onChange={(e) => setYearTaken(e.target.value)}
-          />
-        </FormControl>
-        <Fab size="medium" color="#424949" aria-label="add">
-        <AddIcon />
+      <FormControl sx={{ width: "40%" }}>
+        <TextField
+          id="photo_url"
+          label="Photo URL"
+          variant="outlined"
+          helperText="Add a photo to the collection"
+          value={photoURL}
+          onChange={(e) => setPhotoURL(e.target.value)}
+        />
+      </FormControl>
+      <FormControl sx={{ width: "30%" }}>
+        <TextField
+          id="photo_caption"
+          label="Photo Caption"
+          variant="outlined"
+          value={photoCaption}
+          onChange={(e) => setPhotoCaption(e.target.value)}
+        />
+      </FormControl>
+      <FormControl sx={{ width: "15%" }}>
+        <TextField
+          id="year_taken"
+          label="Photo Year"
+          variant="outlined"
+          value={yearTaken}
+          onChange={(e) => setYearTaken(e.target.value)}
+        />
+      </FormControl>
+      <Fab
+        size="medium"
+        aria-label="add"
+        style={{
+          backgroundColor: "#424949",
+          color: "antiquewhite",
+        }}
+      >
+        <AddPhotoAlternateIcon />
       </Fab>
     </div>
   );
