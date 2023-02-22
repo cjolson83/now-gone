@@ -1,6 +1,7 @@
 const { Place } = require("../models/place");
 const { PlaceType } = require("../models/placeType");
 const { Photo } = require("../models/photo");
+const { Comment } = require("../models/comment");
 
 module.exports = {
   addPlace: async (req, res) => {
@@ -67,10 +68,14 @@ module.exports = {
   getPlace: async (req, res) => {
     try {
       const { id } = req.params;
-      const place = await Place.findOne({ where: {id},
-      include: [{
-        model:Photo
-      }] });
+      const place = await Place.findOne({
+        where: { id },
+        include: [
+          {
+            model: Photo,
+          },
+        ],
+      });
       res.status(200).send(place);
     } catch (error) {
       console.log("ERROR IN getPlaceTypes");
@@ -78,5 +83,31 @@ module.exports = {
       res.sendStatus(400);
     }
   },
-
+  comment: async (req, res) => {
+    try {
+      const { userId, placeId, comment } = req.body;
+      await Comment.create({
+        userId,
+        placeId,
+        comment,
+      });
+      console.log("add comment");
+      res.sendStatus(200);
+    } catch (error) {
+      console.log("ERROR IN addComment");
+      console.log(error);
+      res.sendStatus(400);
+    }
+  },
+  getComments: async (req, res) => {
+    try {
+      const { id } = req.params;
+      const comments = await Comment.findAll({ where: { placeId: id  } });
+      res.status(200).send(comments);
+    } catch (error) {
+      console.log("ERROR IN getComments");
+      console.log(error);
+      res.sendStatus(400);
+    }
+  },
 };

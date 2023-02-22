@@ -10,8 +10,15 @@ const { Photo } = require("./models/photo");
 const { PlaceType } = require("./models/placeType");
 const { Place } = require("./models/place");
 const { User } = require("./models/user");
-const { register, login} = require("./controllers/authControl");
-const { addPlace, getAllPlaceTypes, getAllPlaces, getPlace, getPlacePhotos } = require("./controllers/placeControl");
+const { register, login } = require("./controllers/authControl");
+const {
+  addPlace,
+  getAllPlaceTypes,
+  getAllPlaces,
+  getPlace,
+  comment,
+  getComments
+} = require("./controllers/placeControl");
 const { seedDatabase } = require("./util/seed");
 
 const app = express();
@@ -39,9 +46,12 @@ app.post("/api/login", login);
 
 app.get("/api/places", getAllPlaces);
 app.get("/api/places/:id", getPlace);
-app.post("/api/places", addPlace)
-app.get("/api/types", getAllPlaceTypes)
+app.post("/api/places", addPlace);
 
+app.get("/api/types", getAllPlaceTypes);
+
+app.post("/api/comments", comment);
+app.get("/api/comments/:id", getComments)
 
 sequelize
   // .sync({force: true}).then(()=> seedDatabase())

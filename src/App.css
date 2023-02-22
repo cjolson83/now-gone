@@ -1,5 +1,6 @@
 body {
   background-color: antiquewhite;
+  width: 100%;
 }
 
 .App {
@@ -9,10 +10,10 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: 'Noto Sans JP', sans-serif;
 }
 
 .header {
-  /* width: 40%; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -67,8 +68,22 @@ body {
   color: black;
 }
 
+.addphotoform {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  margin-top: 35px;
+  margin-bottom: 35px;
+
+}
+
 .photoinput {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+}
+
+.commentform{
+  display: flex;
+  justify-content: space-between;
 }

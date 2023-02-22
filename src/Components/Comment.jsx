@@ -1,8 +1,10 @@
 import React from 'react'
 
-const Comment = () => {
+const Comment = ({comments}) => {
   return (
-    <div>Comment</div>
+    <div>
+      <p>{comments.comment}</p>
+    </div>
   )
 }
 
