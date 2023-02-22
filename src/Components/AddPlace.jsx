@@ -91,7 +91,7 @@ const AddPlace = () => {
             label="Name"
             variant="outlined"
             value={placeName}
-            onChange={(e) => setPlaceName(e.target.value)}
+            onChange={(e) => setPlaceName(e.target.value.toUpperCase())}
           />
           <FormControl fullWidth>
             <InputLabel id="place-type">Place Type</InputLabel>

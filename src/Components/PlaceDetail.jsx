@@ -19,7 +19,7 @@ const PlaceDetail = () => {
 
   console.log(place);
   return (
-    <div>
+    <div className="placeDetail">
       <h1>{place.placeName}</h1>
       {place.photos &&
         place.photos.map((photos, id) => {
@@ -29,6 +29,7 @@ const PlaceDetail = () => {
         place.photos.map((photos, id) => {
           return <p key={photos.id}>{photos.photoCaption}, circa {photos.yearTaken}</p>;
         })}
+      <div className="placeInfo">
       <h3>{place.location}</h3>
       <p>Opened: {place.dateOpen}</p>
       <p>Closed: {place.dateClose}</p>
@@ -38,10 +39,11 @@ const PlaceDetail = () => {
         <p>Building is no longer there.</p>
       )}
       <p>Now in this location: {place.thereNow}</p>
-      <p>{place.description}</p>
+      <p className="description">{place.description}</p>
       {authCtx.token ? (<div><AddPhotos place={place}/>
       <CommentForm place={place}/></div>):(null)}
       <CommentContainer place={place}/>
+      </div>
     </div>
    
   );
