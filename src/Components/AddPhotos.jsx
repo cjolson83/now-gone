@@ -1,28 +1,45 @@
 import React, { useState } from "react";
-import Fab from "@mui/material/Fab";
-import AddIcon from "@mui/icons-material/Add";
 import TextField from "@mui/material/TextField";
+import Stack from "@mui/material/Stack";
 import { FormControl } from "@mui/material";
 
 const AddPhotos = () => {
-  const [photos, setPhotos] = useState([]);
+  const [photoURL, setPhotoURL] = useState("");
+  const [yearTaken, setYearTaken] = useState("");
+  const [photoCaption, setPhotoCaption] = useState("");
 
   return (
-    <div className="photoinput">
-      <FormControl sx={{ width: "85%" }}>
-        <TextField id="photo_url" label="Photo URL" variant="outlined" />
+    <Stack component="form" noValidate spacing={3}>
+      <FormControl sx={{ width: "100%" }}>
+        <TextField
+          id="photo_url"
+          label="Photo URL"
+          variant="outlined"
+          value={photoURL}
+          onChange={(e) => setPhotoURL(e.target.value)}
+        />
       </FormControl>
-      <Fab
-        color="primary"
-        aria-label="add"
-        size="medium"
-        style={{
-          backgroundColor: "#424949",
-        }}
-      >
-        <AddIcon />
-      </Fab>
-    </div>
+      <div className="photoinput">
+        <FormControl sx={{ width: "70%" }}>
+          <TextField
+            id="photo_caption"
+            label="Photo Caption"
+            variant="outlined"
+            value={photoCaption}
+            onChange={(e) => setPhotoCaption(e.target.value)}
+          />
+        </FormControl>
+        <FormControl sx={{ width: "25%" }}>
+          <TextField
+            id="year_taken"
+            label="Photo Year"
+            variant="outlined"
+            value={yearTaken}
+            onChange={(e) => setYearTaken(e.target.value)}
+          />
+        </FormControl>
+      </div>
+    </Stack>
   );
 };
 

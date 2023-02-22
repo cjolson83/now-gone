@@ -1,5 +1,6 @@
 const { Place } = require("../models/place");
 const { PlaceType } = require("../models/placeType");
+const { Photo } = require("../models/photo");
 
 module.exports = {
   addPlace: async (req, res) => {
@@ -14,8 +15,11 @@ module.exports = {
         buildingStands,
         thereNow,
         description,
+        photoURL,
+        yearTaken,
+        photoCaption,
       } = req.body;
-      await Place.create({
+      const newPlace = await Place.create({
         userId,
         placeName,
         placeTypeId: selectedPlaceType,
@@ -25,6 +29,12 @@ module.exports = {
         buildingStands,
         thereNow,
         description,
+      });
+      await Photo.create({
+        photoURL,
+        yearTaken,
+        photoCaption,
+        placeId: newPlace.id,
       });
       console.log("add post");
       res.sendStatus(200);
@@ -57,7 +67,10 @@ module.exports = {
   getPlace: async (req, res) => {
     try {
       const { id } = req.params;
-      const place = await Place.findOne({ where: { id } });
+      const place = await Place.findOne({ where: {id},
+      include: [{
+        model:Photo
+      }] });
       res.status(200).send(place);
     } catch (error) {
       console.log("ERROR IN getPlaceTypes");
@@ -65,4 +78,5 @@ module.exports = {
       res.sendStatus(400);
     }
   },
+
 };

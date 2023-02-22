@@ -15,7 +15,6 @@ import AuthContext from "../store/AuthContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Autocomplete from "../Components/Location";
-import AddPhotos from "./AddPhotos";
 
 const AddPlace = () => {
   const { token, userId } = useContext(AuthContext);
@@ -23,12 +22,15 @@ const AddPlace = () => {
   const [placeName, setPlaceName] = useState("");
   const [placeType, setPlaceType] = useState([]);
   const [selectedPlaceType, setSelectedPlaceType] = useState("");
-  const [location, setLocation] = useState('');
+  const [location, setLocation] = useState("");
   const [dateOpen, setDateOpen] = useState("");
   const [dateClose, setDateClose] = useState("");
   const [buildingStands, setBuildingStands] = useState(true);
   const [thereNow, setThereNow] = useState("");
   const [description, setDescription] = useState("");
+  const [photoURL, setPhotoURL] = useState("");
+  const [yearTaken, setYearTaken] = useState("");
+  const [photoCaption, setPhotoCaption] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -46,6 +48,9 @@ const AddPlace = () => {
           thereNow,
           description,
           buildingStands,
+          photoURL,
+          yearTaken,
+          photoCaption
         },
         {
           headers: {
@@ -69,16 +74,14 @@ const AddPlace = () => {
   }, []);
 
   function getAddress(address) {
-    setLocation(address.description)
+    setLocation(address.description);
   }
-
-  console.log(userId)
 
   return (
     <div className="addForm">
       <Box
         sx={{
-          width: 500,
+          width: 600,
           maxWidth: "100%",
         }}
       >
@@ -102,7 +105,11 @@ const AddPlace = () => {
               onChange={(e) => setSelectedPlaceType(e.target.value)}
             >
               {placeType.map((type) => {
-                return <MenuItem key={type.id} value={type.id}>{type.typeName}</MenuItem>;
+                return (
+                  <MenuItem key={type.id} value={type.id}>
+                    {type.typeName}
+                  </MenuItem>
+                );
               })}
             </Select>
           </FormControl>
@@ -119,7 +126,7 @@ const AddPlace = () => {
             id="address1"
             label="Address 1"
             value={location}
-            getAddress = {getAddress}
+            getAddress={getAddress}
             onChange={(e) => setLocation(e.target.value.description)}
           />
           <div className="datescontainer">
@@ -145,6 +152,37 @@ const AddPlace = () => {
               value={dateClose}
               onChange={(e) => setDateClose(e.target.value)}
             />
+            <FormControl>
+              <FormLabel
+                id="demo-row-radio-buttons-group-label"
+                sx={{
+                  fontSize: 16,
+                  textAlign: "left"
+                }}
+              >
+                Building Stands?
+              </FormLabel>
+              <RadioGroup
+                row
+                aria-labelledby="demo-row-radio-buttons-group-label"
+                name="row-radio-buttons-group"
+                value={buildingStands}
+                onChange={(e) => setBuildingStands(e.target.value)}
+              >
+                <FormControlLabel
+                  value="true"
+                  control={<Radio size="small"/>}
+                  label="Yes"
+                  size="small"
+                />
+                <FormControlLabel
+                  value="false"
+                  control={<Radio size="small" />}
+                  label="No"
+                  size="small"
+                />
+              </RadioGroup>
+            </FormControl>
           </div>
           <TextField
             id="thereNow"
@@ -155,21 +193,38 @@ const AddPlace = () => {
             value={thereNow}
             onChange={(e) => setThereNow(e.target.value)}
           />
-          <AddPhotos/>
+          <Stack component="form" noValidate spacing={3}>
+      <FormControl sx={{ width: "100%" }}>
+        <TextField
+          id="photo_url"
+          label="Photo URL"
+          variant="outlined"
+          value={photoURL}
+          onChange={(e) => setPhotoURL(e.target.value)}
+        />
+      </FormControl>
+      <div className="photoinput">
+        <FormControl sx={{ width: "70%" }}>
+          <TextField
+            id="photo_caption"
+            label="Photo Caption"
+            variant="outlined"
+            value={photoCaption}
+            onChange={(e) => setPhotoCaption(e.target.value)}
+          />
+        </FormControl>
+        <FormControl sx={{ width: "25%" }}>
+          <TextField
+            id="year_taken"
+            label="Photo Year"
+            variant="outlined"
+            value={yearTaken}
+            onChange={(e) => setYearTaken(e.target.value)}
+          />
+        </FormControl>
+      </div>
+    </Stack>
           <div className="bottomformdiv">
-            <FormLabel id="demo-radio-buttons-group-label">
-              Building Still Stands?
-            </FormLabel>
-            <RadioGroup
-              row
-              aria-labelledby="demo-radio-buttons-group-label"
-              name="radio-buttons-group"
-              value={buildingStands}
-              onChange={(e) => setBuildingStands(e.target.value)}
-            >
-              <FormControlLabel value="true" control={<Radio />} label="Yes" />
-              <FormControlLabel value="false" control={<Radio />} label="No" />
-            </RadioGroup>
             <Button
               size="large"
               variant="contained"
@@ -183,7 +238,7 @@ const AddPlace = () => {
           </div>
         </Stack>
       </Box>
-      </div>
+    </div>
   );
 };
 

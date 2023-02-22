@@ -11,7 +11,7 @@ const { PlaceType } = require("./models/placeType");
 const { Place } = require("./models/place");
 const { User } = require("./models/user");
 const { register, login} = require("./controllers/authControl");
-const { addPlace, getAllPlaceTypes, getAllPlaces, getPlace } = require("./controllers/placeControl");
+const { addPlace, getAllPlaceTypes, getAllPlaces, getPlace, getPlacePhotos } = require("./controllers/placeControl");
 const { seedDatabase } = require("./util/seed");
 
 const app = express();
@@ -41,6 +41,7 @@ app.get("/api/places", getAllPlaces);
 app.get("/api/places/:id", getPlace);
 app.post("/api/places", addPlace)
 app.get("/api/types", getAllPlaceTypes)
+
 
 sequelize
   // .sync({force: true}).then(()=> seedDatabase())

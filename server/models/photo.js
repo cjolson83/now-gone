@@ -9,7 +9,8 @@ module.exports = {
       allowNull: false,
       primaryKey: true,
     },
-    photo_url: DataTypes.TEXT,
-    year_taken: DataTypes.DATE
+    photoURL: DataTypes.TEXT,
+    yearTaken: DataTypes.INTEGER,
+    photoCaption: DataTypes.STRING,
   }),
 };
