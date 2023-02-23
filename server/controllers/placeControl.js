@@ -45,6 +45,20 @@ module.exports = {
       res.sendStatus(400);
     }
   },
+  deletePlace: async (req, res) => {
+    try {
+      const { id } = req.params;
+      await Place.destroy({
+        where: { id },
+      });
+      console.log("delete place");
+      res.sendStatus(200);
+    } catch (error) {
+      console.log("ERROR IN deletePlace");
+      console.log(error);
+      res.sendStatus(400);
+    }
+  },
   getAllPlaceTypes: async (req, res) => {
     try {
       const allPlaceTypes = await PlaceType.findAll();
@@ -57,11 +71,13 @@ module.exports = {
   },
   getAllPlaces: async (req, res) => {
     try {
-      const allPlaces = await Place.findAll({ include: [
-        {
-          model: Photo,
-        },
-      ],});
+      const allPlaces = await Place.findAll({
+        include: [
+          {
+            model: Photo,
+          },
+        ],
+      });
       res.status(200).send(allPlaces);
     } catch (error) {
       console.log("ERROR IN getPlaceTypes");
@@ -106,7 +122,7 @@ module.exports = {
   getComments: async (req, res) => {
     try {
       const { id } = req.params;
-      const comments = await Comment.findAll({ where: { placeId: id  } });
+      const comments = await Comment.findAll({ where: { placeId: id } });
       res.status(200).send(comments);
     } catch (error) {
       console.log("ERROR IN getComments");
@@ -122,7 +138,7 @@ module.exports = {
         placeId,
         photoURL,
         yearTaken,
-        photoCaption
+        photoCaption,
       });
       console.log("add photo");
       res.sendStatus(200);

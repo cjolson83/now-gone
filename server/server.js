@@ -16,6 +16,7 @@ const {
   getAllPlaceTypes,
   getAllPlaces,
   getPlace,
+  deletePlace,
   comment,
   getComments,
   addPhoto,
@@ -48,6 +49,7 @@ app.post("/api/login", login);
 app.get("/api/places", getAllPlaces);
 app.get("/api/places/:id", getPlace);
 app.post("/api/places", addPlace);
+app.delete("/api/places/:id", deletePlace)
 
 app.get("/api/types", getAllPlaceTypes);
 

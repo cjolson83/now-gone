@@ -8,11 +8,24 @@ import CommentContainer from "./CommentContainer";
 import HourglassDisabledOutlinedIcon from "@mui/icons-material/HourglassDisabledOutlined";
 import Button from "@mui/material/Button";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import { useNavigate } from "react-router-dom";
 
 const PlaceDetail = () => {
   const { id } = useParams();
   const [place, setPlace] = useState({});
   const authCtx = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    axios
+      .delete(`/api/places/${id}`)
+      .then(() => {
+        navigate("/");
+      })
+      .catch((err) => console.log(err));
+  };
 
   useEffect(() => {
     axios.get(`/api/places/${id}`).then((res) => {
@@ -73,20 +86,22 @@ const PlaceDetail = () => {
             );
           })}
       </div>
-      {authCtx.userId === place.userId ? (<div className="deletebutton">
-        <Button
-          size="large"
-          variant="contained"
-          style={{
-            backgroundColor: "#424949",
-            color: "antiquewhite",
-          }}
-          // onClick={handleSubmit}
-        >
-          Delete Place &nbsp; <DeleteForeverIcon />
-        </Button>
-      </div>) : (null)}
-      
+      {authCtx.userId === place.userId ? (
+        <div className="deletebutton">
+          <Button
+            size="large"
+            variant="contained"
+            style={{
+              backgroundColor: "#424949",
+              color: "antiquewhite",
+            }}
+            // onClick={`if(confirm('Are you sure you want to delete this album?')) ${handleSubmit})`}
+            onClick={handleSubmit}
+          >
+            Delete Place &nbsp; <DeleteForeverIcon />
+          </Button>
+        </div>
+      ) : null}
     </div>
   );
 };
