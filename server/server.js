@@ -18,7 +18,7 @@ const {
   getPlace,
   comment,
   getComments,
-  addPhoto
+  addPhoto,
 } = require("./controllers/placeControl");
 const { seedDatabase } = require("./util/seed");
 
@@ -52,9 +52,9 @@ app.post("/api/places", addPlace);
 app.get("/api/types", getAllPlaceTypes);
 
 app.post("/api/comments", comment);
-app.get("/api/comments/:id", getComments)
+app.get("/api/comments/:id", getComments);
 
-app.post("/api/photos", addPhoto)
+app.post("/api/photos", addPhoto);
 
 sequelize
   // .sync({force: true}).then(()=> seedDatabase())

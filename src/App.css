@@ -211,3 +211,7 @@ body {
 .search_places{
   width: 25%;
 }
+
+.deletebutton{
+  margin: 35px;
+}

@@ -26,7 +26,7 @@ const Auth = () => {
     axios
       .post(register ? "/api/register" : "/api/login", body)
       .then((res) => {
-        authCtx.login(res.data.token, res.data.exp, res.data.user);
+        authCtx.login(res.data.token, res.data.exp, res.data.userId);
       })
       .catch((err) => alert(err.response.data));
   };
@@ -74,7 +74,7 @@ const Auth = () => {
           style={{
             backgroundColor: "#424949",
             fontSize: "14pt",
-            color: "antiquewhite"
+            color: "antiquewhite",
           }}
         >
           {register ? "Register" : "Login"}

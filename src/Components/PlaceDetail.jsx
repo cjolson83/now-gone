@@ -6,6 +6,8 @@ import CommentForm from "./CommentForm";
 import AuthContext from "../store/AuthContext";
 import CommentContainer from "./CommentContainer";
 import HourglassDisabledOutlinedIcon from "@mui/icons-material/HourglassDisabledOutlined";
+import Button from "@mui/material/Button";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 
 const PlaceDetail = () => {
   const { id } = useParams();
@@ -18,7 +20,8 @@ const PlaceDetail = () => {
     });
   }, [id]);
 
-  console.log(place);
+  console.log(authCtx.userId);
+
   return (
     <div className="placeDetail">
       <h1 className="placename">{place.placeName}</h1>
@@ -70,6 +73,20 @@ const PlaceDetail = () => {
             );
           })}
       </div>
+      {authCtx.userId === place.userId ? (<div className="deletebutton">
+        <Button
+          size="large"
+          variant="contained"
+          style={{
+            backgroundColor: "#424949",
+            color: "antiquewhite",
+          }}
+          // onClick={handleSubmit}
+        >
+          Delete Place &nbsp; <DeleteForeverIcon />
+        </Button>
+      </div>) : (null)}
+      
     </div>
   );
 };
