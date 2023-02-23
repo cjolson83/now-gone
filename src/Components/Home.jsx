@@ -17,9 +17,9 @@ const Home = () => {
   }, [])
 
   return (
-    <div>
+    // <div>
       <PlaceContainer places={places}/>
-    </div>
+    // </div>
   );
 };
 

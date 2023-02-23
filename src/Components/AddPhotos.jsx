@@ -1,13 +1,46 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import TextField from "@mui/material/TextField";
 import { FormControl } from "@mui/material";
 import Fab from "@mui/material/Fab";
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
+import AuthContext from "../store/AuthContext";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
-const AddPhotos = () => {
+const AddPhotos = ({ place }) => {
   const [photoURL, setPhotoURL] = useState("");
   const [yearTaken, setYearTaken] = useState("");
   const [photoCaption, setPhotoCaption] = useState("");
+  const { token, userId } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const placeId = place.id;
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    axios
+      .post(
+        "/api/photos",
+        {
+          placeId,
+          userId,
+          photoURL,
+          yearTaken,
+          photoCaption,
+        },
+        {
+          headers: {
+            authorization: token,
+          },
+        }
+      )
+      .then(() => {
+        document.location.reload();
+      })
+      .catch((err) => console.log(err));
+  };
+
+  console.log(placeId);
 
   return (
     <div className="addphotoform">
@@ -24,7 +57,7 @@ const AddPhotos = () => {
       <FormControl sx={{ width: "30%" }}>
         <TextField
           id="photo_caption"
-          label="Photo Caption"
+          label="Photo Caption / Credit"
           variant="outlined"
           value={photoCaption}
           onChange={(e) => setPhotoCaption(e.target.value)}
@@ -46,6 +79,7 @@ const AddPhotos = () => {
           backgroundColor: "#424949",
           color: "antiquewhite",
         }}
+        onClick={handleSubmit}
       >
         <AddPhotoAlternateIcon />
       </Fab>

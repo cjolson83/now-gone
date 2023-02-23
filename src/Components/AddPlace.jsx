@@ -208,7 +208,7 @@ const AddPlace = () => {
         <FormControl sx={{ width: "70%" }}>
           <TextField
             id="photo_caption"
-            label="Photo Caption"
+            label="Photo Caption / Credit"
             variant="outlined"
             value={photoCaption}
             onChange={(e) => setPhotoCaption(e.target.value)}

@@ -57,7 +57,11 @@ module.exports = {
   },
   getAllPlaces: async (req, res) => {
     try {
-      const allPlaces = await Place.findAll();
+      const allPlaces = await Place.findAll({ include: [
+        {
+          model: Photo,
+        },
+      ],});
       res.status(200).send(allPlaces);
     } catch (error) {
       console.log("ERROR IN getPlaceTypes");
@@ -106,6 +110,24 @@ module.exports = {
       res.status(200).send(comments);
     } catch (error) {
       console.log("ERROR IN getComments");
+      console.log(error);
+      res.sendStatus(400);
+    }
+  },
+  addPhoto: async (req, res) => {
+    try {
+      const { userId, placeId, photoURL, yearTaken, photoCaption } = req.body;
+      await Photo.create({
+        userId,
+        placeId,
+        photoURL,
+        yearTaken,
+        photoCaption
+      });
+      console.log("add photo");
+      res.sendStatus(200);
+    } catch (error) {
+      console.log("ERROR IN addphoto");
       console.log(error);
       res.sendStatus(400);
     }

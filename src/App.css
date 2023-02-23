@@ -10,7 +10,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: 'Roboto Flex', sans-serif;
+  font-family: "Roboto Flex", sans-serif;
 }
 
 .header {
@@ -75,7 +75,6 @@ body {
   box-sizing: border-box;
   margin-top: 35px;
   margin-bottom: 35px;
-
 }
 
 .photoinput {
@@ -83,54 +82,124 @@ body {
   justify-content: space-between;
 }
 
-.commentform{
+.commentform {
   display: flex;
   justify-content: space-between;
 }
 
-.placename{
+.placename {
   font-family: "Sawarabi Mincho", serif;
   margin-bottom: 10px;
+  width: 55vw;
 }
 
 .placeInfo {
-  width: 65%;
+  width: 80vw;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.placeDetail{
+.placeDetail {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.photo_caption{
+.photo_caption {
   font-size: 8pt;
   text-align: left;
 }
 
-.daterange{
+.daterange {
   display: flex;
   align-items: center;
-  width: 32%;
+  width: 375px;
   justify-content: space-between;
 }
 
-.addinfo{
+.addinfo {
+  width: 55svw;
+}
+
+.CommentContainer {
+  width: 55svw;
+  margin-bottom: 35px;
+}
+
+.comment {
+  margin-bottom: 10px;
+}
+
+.description {
   width: 80%;
 }
 
-.comment{
-  margin: 10px;
+.placephoto {
+  width: 100%;
+  border-radius: 5px;
 }
 
-.CommentContainer{
-  width: 82%;
-  margin: 25px
+.photocard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45%;
+  height: fit-content;
+  margin-bottom: 10px;
 }
 
-.description{
-  width: 80%
+.photogallery {
+  width: 55svw;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap
+}
+
+.topphotocontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+}
+
+.topphoto {
+  width: 85%;
+}
+
+.placepreview {
+  width: 25%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 25px;
+  flex-wrap: wrap;
+}
+
+.placepreview:hover {
+  cursor: pointer;
+}
+
+.placepreviewinfo {
+  color: white;
+  width: 90%;
+}
+
+.placemainimage {
+  border-radius: 4px;
+  width: 55vw;
+}
+
+.placecontainer {
+  width: 80vw;
+  margin-top: 45px;
+  display: flex;
+  justify-content: space-around;
+  height: fit-content;
+  flex-wrap: wrap;
+  margin-bottom: 45px;
 }

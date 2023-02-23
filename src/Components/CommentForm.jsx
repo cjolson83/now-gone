@@ -29,7 +29,7 @@ const CommentForm = ({place}) => {
         }
       )
       .then(() => {
-        setComment('');
+        document.location.reload();
       })
       .catch((err) => console.log(err));
   };

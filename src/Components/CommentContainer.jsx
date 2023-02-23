@@ -12,13 +12,13 @@ const CommentContainer = () => {
     axios.get(`/api/comments/${id}`).then((res) => {
       setComments(res.data);
     });
-  }, []);
+  }, [id]);
 
-  const commentDisplay = comments.map((comments, id) => {
+  const commentDisplay = comments.map((comments) => {
     return <Comment key={comments.id} comments={comments} />;
   });
 
-  return <div className="CommentContainer"><p>User Stories</p>{commentDisplay}</div>;
+  return <div className="CommentContainer"><h3>Stories</h3>{commentDisplay}</div>;
 };
 
 export default CommentContainer;

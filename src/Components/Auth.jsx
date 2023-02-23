@@ -26,7 +26,7 @@ const Auth = () => {
     axios
       .post(register ? "/api/register" : "/api/login", body)
       .then((res) => {
-        authCtx.login(res.data.token, res.data.exp, res.data.userId);
+        authCtx.login(res.data.token, res.data.exp, res.data.user);
       })
       .catch((err) => alert(err.response.data));
   };
