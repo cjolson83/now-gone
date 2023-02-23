@@ -9,6 +9,7 @@ import HourglassDisabledOutlinedIcon from "@mui/icons-material/HourglassDisabled
 import Button from "@mui/material/Button";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { useNavigate } from "react-router-dom";
+import ModalUnstyledDemo from "../Components/PhotoModal";
 
 const PlaceDetail = () => {
   const { id } = useParams();
@@ -32,8 +33,6 @@ const PlaceDetail = () => {
       setPlace(res.data);
     });
   }, [id]);
-
-  console.log(authCtx.userId);
 
   return (
     <div className="placeDetail">
@@ -68,23 +67,9 @@ const PlaceDetail = () => {
         ) : null}
       </div>
       <h3>Photo Gallery</h3>
-      <div className="photogallery">
-        {place.photos &&
-          place.photos.map((photos, id) => {
-            return (
-              <div className="photocard">
-                <img
-                  className="placephoto"
-                  alt="place"
-                  key={photos.id}
-                  src={photos.photoURL}
-                />
-                <p className="photo_caption" key={photos.id}>
-                  {photos.photoCaption}, circa {photos.yearTaken}
-                </p>
-              </div>
-            );
-          })}
+      <p>Click to see full image</p>
+      <div>
+        <ModalUnstyledDemo place={place} />
       </div>
       {authCtx.userId === place.userId ? (
         <div className="deletebutton">
@@ -95,7 +80,6 @@ const PlaceDetail = () => {
               backgroundColor: "#424949",
               color: "antiquewhite",
             }}
-            // onClick={`if(confirm('Are you sure you want to delete this album?')) ${handleSubmit})`}
             onClick={handleSubmit}
           >
             Delete Place &nbsp; <DeleteForeverIcon />

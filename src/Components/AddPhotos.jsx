@@ -38,8 +38,6 @@ const AddPhotos = ({ place }) => {
       .catch((err) => console.log(err));
   };
 
-  console.log(placeId);
-
   return (
     <div className="addphotoform">
       <FormControl sx={{ width: "40%" }}>
