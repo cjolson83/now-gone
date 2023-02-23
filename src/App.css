@@ -196,10 +196,18 @@ body {
 
 .placecontainer {
   width: 80vw;
-  margin-top: 45px;
+  margin-top: 15px;
   display: flex;
   justify-content: space-around;
   height: fit-content;
   flex-wrap: wrap;
   margin-bottom: 45px;
+}
+
+.homepage {
+  margin-top: 35px;
+}
+
+.search_places{
+  width: 25%;
 }

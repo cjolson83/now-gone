@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import PlaceContainer from "./PlaceContainer";
 
+
 const Home = () => {
   const [places, setPlaces] = useState([]);
 
@@ -17,9 +18,7 @@ const Home = () => {
   }, [])
 
   return (
-    // <div>
       <PlaceContainer places={places}/>
-    // </div>
   );
 };
 

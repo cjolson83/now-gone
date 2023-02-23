@@ -5,14 +5,12 @@ import Fab from "@mui/material/Fab";
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
 import AuthContext from "../store/AuthContext";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 const AddPhotos = ({ place }) => {
   const [photoURL, setPhotoURL] = useState("");
   const [yearTaken, setYearTaken] = useState("");
   const [photoCaption, setPhotoCaption] = useState("");
   const { token, userId } = useContext(AuthContext);
-  const navigate = useNavigate();
   const placeId = place.id;
 
   const handleSubmit = (e) => {
