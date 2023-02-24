@@ -33,7 +33,7 @@ export default function GoogleMaps({getAddress}) {
   if (typeof window !== 'undefined' && !loaded.current) {
     if (!document.querySelector('#google-maps')) {
       loadScript(
-        `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_API_KEY}&libraries=places`,
+        `https://maps.googleapis.com/maps/api/js?key=${REACT_APP_API_KEY}&libraries=places`,
         document.querySelector('head'),
         'google-maps',
       );

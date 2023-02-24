@@ -5,7 +5,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 const createToken = (username, id) => {
-  return jwt.sign({ username, id }, process.env.REACT_APP_SECRET, { expiresIn: "2 days" });
+  return jwt.sign({ username, id }, REACT_APP_SECRET, { expiresIn: "2 days" });
 };
 
 module.exports = {
