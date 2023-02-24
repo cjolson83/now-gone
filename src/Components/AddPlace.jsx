@@ -103,6 +103,7 @@ const AddPlace = () => {
               style={{
                 textAlign: "left",
               }}
+              value=""
               onChange={(e) => setSelectedPlaceType(e.target.value)}
             >
               {placeType.map((type) => {

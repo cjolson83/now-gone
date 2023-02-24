@@ -8,8 +8,6 @@ const PlacePreview = ({ places }) => {
     navigate(`/api/places/${places.id}`);
   };
 
-  console.log(places);
-
   return (
     <div
       className="placepreview"

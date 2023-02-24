@@ -9,7 +9,7 @@ const Home = () => {
   const getAllPlaces = () => {
     axios.get("/api/places").then((res) => {
       setPlaces(res.data);
-      console.log(res.data);
+      // console.log(res.data);
     });
   };
 
