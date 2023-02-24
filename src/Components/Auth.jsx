@@ -37,7 +37,9 @@ const Auth = () => {
     event.preventDefault();
   };
 
+
   return (
+    <div>
     <form className="authcontainer" onSubmit={(e) => handleSubmit(e)}>
       <TextField
         id="username"
@@ -89,6 +91,7 @@ const Auth = () => {
         </Button>
       </div>
     </form>
+    </div>
   );
 };
 

@@ -62,6 +62,6 @@ sequelize
   // .sync({force: true}).then(()=> seedDatabase())
   .sync()
   .then(() => {
-    app.listen(REACT_APP_SERVER_PORT, () => console.log(`Up on ${REACT_APP_SERVER_PORT}`));
+    app.listen(process.env.REACT_APP_SERVER_PORT, () => console.log(`Up on ${process.env.REACT_APP_SERVER_PORT}`));
   })
   .catch((err) => console.log(err));

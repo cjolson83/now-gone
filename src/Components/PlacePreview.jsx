@@ -18,7 +18,8 @@ const PlacePreview = ({ places }) => {
           rgba(0, 0, 0, 0.5)),
           url(${places.photos[0].photoURL})`,
         backgroundRepeat: "no-repeat",
-        backgroundSize: "cover"
+        backgroundSize: "cover",
+        backgroundPosition: "center"
       }}
       onClick={handleClick}
     >

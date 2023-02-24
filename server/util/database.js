@@ -2,7 +2,7 @@ require("dotenv").config();
 const { REACT_APP_CONNECTION_STRING } = process.env;
 const Sequelize = require("sequelize");
 
-const sequelize = new Sequelize(REACT_APP_CONNECTION_STRING, {
+const sequelize = new Sequelize(process.env.REACT_APP_CONNECTION_STRING, {
   dialect: "postgres",
   dialectOptions: {
     ssl: {
