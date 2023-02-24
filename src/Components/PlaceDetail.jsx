@@ -15,6 +15,11 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import Dialog from "@mui/material/Dialog";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import Typography from "@mui/material/Typography";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const PlaceDetail = () => {
   const { id } = useParams();
@@ -72,18 +77,60 @@ const PlaceDetail = () => {
         )}
         <h4>Now in this location: {place.thereNow}</h4>
         <p className="description">{place.description}</p>
-        <CommentContainer place={place} />
-        {authCtx.token ? (
+      </div>
+      <div className="accordiandiv">
+        <Accordion className="accordian">
+          <AccordionSummary
+            sx={{
+              bgcolor: 'antiquewhite',
+            }}
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+          >
+            <Typography className="accordiantype"><h4>Stories</h4></Typography>
+          </AccordionSummary>
+          <AccordionDetails className="accordian">
+            <CommentContainer place={place} />
+          </AccordionDetails>
+        </Accordion>
+        <Accordion className="accordian">
+          <AccordionSummary
+          sx={{
+            bgcolor: 'antiquewhite',
+          }}
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel2a-content"
+            id="panel2a-header"
+          >
+            <Typography className="accordiantype"><h4>Photo Gallery</h4></Typography>
+          </AccordionSummary>
+          <AccordionDetails className="accordian">
+            <div>
+              <ModalUnstyledDemo place={place} />
+            </div>
+          </AccordionDetails>
+        </Accordion>
+        <Accordion className="accordian">
+          <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel2a-content"
+            id="panel2a-header"
+            sx={{
+              bgcolor: 'antiquewhite',
+            }}
+          >
+            <Typography className="accordiantype"><h4>Add to the Story</h4></Typography>
+          </AccordionSummary>
+          <AccordionDetails className="accordian">
+          {authCtx.token ? (
           <div className="addinfo">
             <CommentForm place={place} />
             <AddPhotos place={place} />
           </div>
-        ) : null}
-      </div>
-      <h3>Photo Gallery</h3>
-      <p>Click to see full image</p>
-      <div>
-        <ModalUnstyledDemo place={place} />
+        ) : <p>Log into your account to be able to add stories and photos.</p>}
+          </AccordionDetails>
+        </Accordion>
       </div>
       {authCtx.userId === place.userId ? (
         <div className="deletebutton">
