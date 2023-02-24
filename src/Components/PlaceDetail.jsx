@@ -88,7 +88,7 @@ const PlaceDetail = () => {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography className="accordiantype"><h4>Stories</h4></Typography>
+            <Typography component={'span'}className="accordiantype"><h4>Stories</h4></Typography>
           </AccordionSummary>
           <AccordionDetails className="accordian">
             <CommentContainer place={place} />
@@ -103,7 +103,7 @@ const PlaceDetail = () => {
             aria-controls="panel2a-content"
             id="panel2a-header"
           >
-            <Typography className="accordiantype"><h4>Photo Gallery</h4></Typography>
+            <Typography component={'span'}className="accordiantype"><h4>Photo Gallery</h4></Typography>
           </AccordionSummary>
           <AccordionDetails className="accordian">
             <div>
@@ -120,7 +120,7 @@ const PlaceDetail = () => {
               bgcolor: 'antiquewhite',
             }}
           >
-            <Typography className="accordiantype"><h4>Add to the Story</h4></Typography>
+            <Typography component={'span'}className="accordiantype"><h4>Add to the Story</h4></Typography>
           </AccordionSummary>
           <AccordionDetails className="accordian">
           {authCtx.token ? (
