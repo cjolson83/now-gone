@@ -86,7 +86,7 @@ const AddPlace = () => {
           maxWidth: "100%",
         }}
       >
-        <Stack component="form" noValidate spacing={3}>
+        <Stack  noValidate spacing={3}>
           <TextField
             id="placeName"
             label="Name"
@@ -103,7 +103,7 @@ const AddPlace = () => {
               style={{
                 textAlign: "left",
               }}
-              value=""
+              value={selectedPlaceType}
               onChange={(e) => setSelectedPlaceType(e.target.value)}
             >
               {placeType.map((type) => {

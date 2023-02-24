@@ -18,7 +18,7 @@ const CommentContainer = () => {
     return <Comment key={comments.id} comments={comments} />;
   });
 
-  return <div className="CommentContainer"><h3>Stories</h3>{commentDisplay}</div>;
+  return <div className="CommentContainer"><h3>Stories</h3>{commentDisplay.length < 0 ? commentDisplay : <p>No stories yet...</p>}</div>;
 };
 
 export default CommentContainer;

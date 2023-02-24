@@ -226,3 +226,10 @@ body {
 .deletebutton{
   margin: 35px;
 }
+
+.searchby{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
