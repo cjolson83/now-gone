@@ -5,11 +5,13 @@ import Fab from "@mui/material/Fab";
 import axios from "axios";
 import AuthContext from "../store/AuthContext";
 import AddCommentIcon from '@mui/icons-material/AddComment';
+import { useNavigate } from "react-router-dom";
 
 const CommentForm = ({place}) => {
   const [comment, setComment] = useState("");
   const { token, userId } = useContext(AuthContext);
   const placeId = place.id
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,11 +31,11 @@ const CommentForm = ({place}) => {
         }
       )
       .then(() => {
-        document.location.reload();
+        navigate(`/api/places/${place.id}`);
       })
       .catch((err) => console.log(err));
   };
-
+console.log(place.id)
   return (
     <div className="commentform">
       <FormControl sx={{ width: "92%" }}>

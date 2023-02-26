@@ -25,7 +25,7 @@ function App() {
           path="/addplace"
           element={authCtx.token ? <AddPlace /> : <Navigate to="/auth" />}
         />
-        <Route path="/api/places/:id" element={<PlaceDetail />} />
+        <Route exact path="/api/places/:id" element={<PlaceDetail />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </div>

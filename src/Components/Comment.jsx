@@ -13,7 +13,7 @@ const Item = styled(Paper)(({ theme }) => ({
 const Comment = ({ comments }) => {
   return (
     <div className="comment">
-      <Item>{comments.comment}</Item>
+      <p>{comments.comment}</p>
     </div>
   );
 };

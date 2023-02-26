@@ -76,7 +76,7 @@ const PlaceDetail = () => {
           <h4>Building is no longer there.</h4>
         )}
         <h4>Now in this location: {place.thereNow}</h4>
-        <p className="description">{place.description}</p>
+        <p className="description" >{place.description}</p>
       </div>
       <div className="accordiandiv">
         <Accordion className="accordian">

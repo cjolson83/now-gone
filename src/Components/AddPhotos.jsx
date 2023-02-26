@@ -35,7 +35,7 @@ const AddPhotos = ({ place }) => {
         }
       )
       .then(() => {
-        window.location.reload();
+        navigate("/")
       })
       .catch((err) => console.log(err));
   };
