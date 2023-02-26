@@ -2,7 +2,7 @@
   "name": "now-gone",
   "version": "0.1.0",
   "private": true,
-  "main": "server/server.js",
+  "main": "./server/server.js",
   "proxy": "http://localhost:4545",
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -34,7 +34,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node ./server/index.js && npm build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
