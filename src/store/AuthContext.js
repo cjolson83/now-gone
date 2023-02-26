@@ -81,7 +81,6 @@ export const AuthContextProvider = (props) => {
     }
   }, [localData, logout]);
 
-
   const contextValue = { token, userId, login, logout };
 
   return (

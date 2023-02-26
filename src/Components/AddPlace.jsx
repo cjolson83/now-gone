@@ -15,7 +15,7 @@ import AuthContext from "../store/AuthContext";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Autocomplete from "../Components/Location";
-import DomainAddIcon from '@mui/icons-material/DomainAdd';
+import DomainAddIcon from "@mui/icons-material/DomainAdd";
 
 const AddPlace = () => {
   const { token, userId } = useContext(AuthContext);
@@ -51,7 +51,7 @@ const AddPlace = () => {
           buildingStands,
           photoURL,
           yearTaken,
-          photoCaption
+          photoCaption,
         },
         {
           headers: {
@@ -86,7 +86,7 @@ const AddPlace = () => {
           maxWidth: "100%",
         }}
       >
-        <Stack  noValidate spacing={3}>
+        <Stack noValidate spacing={3}>
           <TextField
             id="placeName"
             label="Name"
@@ -159,7 +159,7 @@ const AddPlace = () => {
                 id="demo-row-radio-buttons-group-label"
                 sx={{
                   fontSize: 16,
-                  textAlign: "left"
+                  textAlign: "left",
                 }}
               >
                 Building Stands?
@@ -173,7 +173,7 @@ const AddPlace = () => {
               >
                 <FormControlLabel
                   value="true"
-                  control={<Radio size="small"/>}
+                  control={<Radio size="small" />}
                   label="Yes"
                   size="small"
                 />
@@ -196,47 +196,47 @@ const AddPlace = () => {
             onChange={(e) => setThereNow(e.target.value)}
           />
           <Stack component="form" noValidate spacing={3}>
-      <FormControl sx={{ width: "100%" }}>
-        <TextField
-          id="photo_url"
-          label="Photo URL"
-          variant="outlined"
-          value={photoURL}
-          onChange={(e) => setPhotoURL(e.target.value)}
-        />
-      </FormControl>
-      <div className="photoinput">
-        <FormControl sx={{ width: "70%" }}>
-          <TextField
-            id="photo_caption"
-            label="Photo Caption / Credit"
-            variant="outlined"
-            value={photoCaption}
-            onChange={(e) => setPhotoCaption(e.target.value)}
-          />
-        </FormControl>
-        <FormControl sx={{ width: "25%" }}>
-          <TextField
-            id="year_taken"
-            label="Photo Year"
-            variant="outlined"
-            value={yearTaken}
-            onChange={(e) => setYearTaken(e.target.value)}
-          />
-        </FormControl>
-      </div>
-    </Stack>
+            <FormControl sx={{ width: "100%" }}>
+              <TextField
+                id="photo_url"
+                label="Photo URL"
+                variant="outlined"
+                value={photoURL}
+                onChange={(e) => setPhotoURL(e.target.value)}
+              />
+            </FormControl>
+            <div className="photoinput">
+              <FormControl sx={{ width: "70%" }}>
+                <TextField
+                  id="photo_caption"
+                  label="Photo Caption / Credit"
+                  variant="outlined"
+                  value={photoCaption}
+                  onChange={(e) => setPhotoCaption(e.target.value)}
+                />
+              </FormControl>
+              <FormControl sx={{ width: "25%" }}>
+                <TextField
+                  id="year_taken"
+                  label="Photo Year"
+                  variant="outlined"
+                  value={yearTaken}
+                  onChange={(e) => setYearTaken(e.target.value)}
+                />
+              </FormControl>
+            </div>
+          </Stack>
           <div className="bottomformdiv">
             <Button
               size="large"
               variant="contained"
               style={{
                 backgroundColor: "#424949",
-                color: "antiquewhite"
+                color: "antiquewhite",
               }}
               onClick={handleSubmit}
             >
-              Submit &nbsp; <DomainAddIcon/>
+              Submit &nbsp; <DomainAddIcon />
             </Button>
           </div>
         </Stack>

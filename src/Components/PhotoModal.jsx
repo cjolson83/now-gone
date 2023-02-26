@@ -1,5 +1,5 @@
 import * as React from "react";
-import {useState} from "react"
+import { useState } from "react";
 import PropTypes from "prop-types";
 import clsx from "clsx";
 import { styled, Box } from "@mui/system";
@@ -48,7 +48,6 @@ const style = (theme) => ({
   width: "35%",
 });
 
-
 export default function ModalUnstyledDemo({ place }) {
   const [showImageModal, setShowImageModal] = useState(false);
   const handleShowImageModal = (id) => setShowImageModal(id);
@@ -77,11 +76,11 @@ export default function ModalUnstyledDemo({ place }) {
                 slots={{ backdrop: Backdrop }}
               >
                 <Box sx={style}>
-                <img
-                className="placephoto"
-                alt="place"
-                src={photos.photoURL}
-              />
+                  <img
+                    className="placephoto"
+                    alt="place"
+                    src={photos.photoURL}
+                  />
                 </Box>
               </Modal>
             </div>

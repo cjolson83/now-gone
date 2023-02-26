@@ -49,10 +49,10 @@ module.exports = {
     try {
       const { id } = req.params;
       await Photo.destroy({
-        where: { placeId : id },
+        where: { placeId: id },
       });
       await Comment.destroy({
-        where: { placeId : id  },
+        where: { placeId: id },
       });
       await Place.destroy({
         where: { id },

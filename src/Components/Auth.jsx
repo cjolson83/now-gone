@@ -37,60 +37,61 @@ const Auth = () => {
     event.preventDefault();
   };
 
-
   return (
     <div>
-    <form className="authcontainer" onSubmit={(e) => handleSubmit(e)}>
-      <TextField
-        id="username"
-        sx={{ m: 1, width: "35ch" }}
-        label="Username"
-        variant="outlined"
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <FormControl sx={{ m: 1, width: "35ch" }} variant="outlined">
-        <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel>
-        <OutlinedInput
-          id="outlined-adornment-password"
-          onChange={(e) => setPassword(e.target.value)}
-          type={showPassword ? "text" : "password"}
-          endAdornment={
-            <InputAdornment position="end">
-              <IconButton
-                aria-label="toggle password visibility"
-                onClick={handleClickShowPassword}
-                onMouseDown={handleMouseDownPassword}
-                edge="end"
-              >
-                {showPassword ? <VisibilityOff /> : <Visibility />}
-              </IconButton>
-            </InputAdornment>
-          }
-          label="Password"
+      <form className="authcontainer" onSubmit={(e) => handleSubmit(e)}>
+        <TextField
+          id="username"
+          sx={{ m: 1, width: "35ch" }}
+          label="Username"
+          variant="outlined"
+          onChange={(e) => setUsername(e.target.value)}
         />
-      </FormControl>
-      <div className="authbuttoncontainer">
-        <Button
-          variant="contained"
-          onClick={(e) => handleSubmit(e)}
-          style={{
-            backgroundColor: "#424949",
-            fontSize: "14pt",
-            color: "antiquewhite",
-          }}
-        >
-          {register ? "Register" : "Login"}
-        </Button>
-        <Button
-          onClick={() => setRegister(!register)}
-          style={{
-            color: "#424949",
-          }}
-        >
-          Need to {register ? "Login" : "Register"}?
-        </Button>
-      </div>
-    </form>
+        <FormControl sx={{ m: 1, width: "35ch" }} variant="outlined">
+          <InputLabel htmlFor="outlined-adornment-password">
+            Password
+          </InputLabel>
+          <OutlinedInput
+            id="outlined-adornment-password"
+            onChange={(e) => setPassword(e.target.value)}
+            type={showPassword ? "text" : "password"}
+            endAdornment={
+              <InputAdornment position="end">
+                <IconButton
+                  aria-label="toggle password visibility"
+                  onClick={handleClickShowPassword}
+                  onMouseDown={handleMouseDownPassword}
+                  edge="end"
+                >
+                  {showPassword ? <VisibilityOff /> : <Visibility />}
+                </IconButton>
+              </InputAdornment>
+            }
+            label="Password"
+          />
+        </FormControl>
+        <div className="authbuttoncontainer">
+          <Button
+            variant="contained"
+            onClick={(e) => handleSubmit(e)}
+            style={{
+              backgroundColor: "#424949",
+              fontSize: "14pt",
+              color: "antiquewhite",
+            }}
+          >
+            {register ? "Register" : "Login"}
+          </Button>
+          <Button
+            onClick={() => setRegister(!register)}
+            style={{
+              color: "#424949",
+            }}
+          >
+            Need to {register ? "Login" : "Register"}?
+          </Button>
+        </div>
+      </form>
     </div>
   );
 };

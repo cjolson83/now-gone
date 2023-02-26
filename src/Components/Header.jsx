@@ -8,7 +8,7 @@ const Header = () => {
   const authCtx = useContext(AuthContext);
   return (
     <div className="header">
-      <h1 className="nowGone" >now gone.</h1>
+      <h1 className="nowGone">now gone.</h1>
       {authCtx.token ? (
         <div className="nav">
           <Button
@@ -16,7 +16,7 @@ const Header = () => {
               color: "#424949",
             }}
             onClick={() => navigate("/addplace")}
-            size = "large"
+            size="large"
           >
             Add a Place
           </Button>
@@ -25,7 +25,7 @@ const Header = () => {
               color: "#424949",
             }}
             onClick={() => navigate("/")}
-            size = "large"
+            size="large"
           >
             Home
           </Button>
@@ -34,7 +34,7 @@ const Header = () => {
               color: "#424949",
             }}
             onClick={() => authCtx.logout()}
-            size = "large"
+            size="large"
           >
             Logout
           </Button>
@@ -46,7 +46,7 @@ const Header = () => {
               color: "#424949",
             }}
             onClick={() => navigate("/")}
-            size = "large"
+            size="large"
           >
             Home
           </Button>
@@ -55,7 +55,7 @@ const Header = () => {
               color: "#424949",
             }}
             onClick={() => navigate("/auth")}
-            size = "large"
+            size="large"
           >
             Login / Register
           </Button>

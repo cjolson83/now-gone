@@ -4,7 +4,7 @@ const cors = require("cors");
 
 const { PORT } = process.env;
 const { sequelize } = require("./util/database");
-const path = require('path');
+const path = require("path");
 
 const { Comment } = require("./models/comment");
 const { Photo } = require("./models/photo");
@@ -52,7 +52,7 @@ app.post("/api/login", login);
 app.get("/api/places", getAllPlaces);
 app.get("/api/places/:id", getPlace);
 app.post("/api/places", addPlace);
-app.delete("/api/places/:id", deletePlace)
+app.delete("/api/places/:id", deletePlace);
 
 app.get("/api/types", getAllPlaceTypes);
 
@@ -61,8 +61,8 @@ app.get("/api/comments/:id", getComments);
 
 app.post("/api/photos", addPhoto);
 
-app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, '../build', 'index.html'));
+app.get("/*", function (req, res) {
+  res.sendFile(path.join(__dirname, "../build", "index.html"));
 });
 
 sequelize

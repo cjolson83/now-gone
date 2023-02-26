@@ -19,7 +19,7 @@ const PlacePreview = ({ places }) => {
           url(${places.photos[0].photoURL})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        backgroundPosition: "center"
+        backgroundPosition: "center",
       }}
       onClick={handleClick}
     >

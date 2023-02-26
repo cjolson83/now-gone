@@ -4,14 +4,12 @@ import { FormControl } from "@mui/material";
 import Fab from "@mui/material/Fab";
 import axios from "axios";
 import AuthContext from "../store/AuthContext";
-import AddCommentIcon from '@mui/icons-material/AddComment';
-import { useNavigate } from "react-router-dom";
+import AddCommentIcon from "@mui/icons-material/AddComment";
 
-const CommentForm = ({place}) => {
+const CommentForm = ({ place }) => {
   const [comment, setComment] = useState("");
   const { token, userId } = useContext(AuthContext);
-  const placeId = place.id
-  const navigate = useNavigate();
+  const placeId = place.id;
 
   function refreshPage() {
     window.location.reload(false);
@@ -35,11 +33,11 @@ const CommentForm = ({place}) => {
         }
       )
       .then(() => {
-        {refreshPage()};
+        refreshPage();
       })
       .catch((err) => console.log(err));
   };
-console.log(place.id)
+
   return (
     <div className="commentform">
       <FormControl sx={{ width: "92%" }}>

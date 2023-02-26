@@ -76,19 +76,21 @@ const PlaceDetail = () => {
           <h4>Building is no longer there.</h4>
         )}
         <h4>Now in this location: {place.thereNow}</h4>
-        <p className="description" >{place.description}</p>
+        <p className="description">{place.description}</p>
       </div>
       <div className="accordiandiv">
         <Accordion className="accordian">
           <AccordionSummary
             sx={{
-              bgcolor: 'antiquewhite',
+              bgcolor: "antiquewhite",
             }}
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography component={'span'}className="accordiantype"><h4>Stories</h4></Typography>
+            <Typography component={"span"} className="accordiantype">
+              <h4>Stories</h4>
+            </Typography>
           </AccordionSummary>
           <AccordionDetails className="accordian">
             <CommentContainer place={place} />
@@ -96,14 +98,16 @@ const PlaceDetail = () => {
         </Accordion>
         <Accordion className="accordian">
           <AccordionSummary
-          sx={{
-            bgcolor: 'antiquewhite',
-          }}
+            sx={{
+              bgcolor: "antiquewhite",
+            }}
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel2a-content"
             id="panel2a-header"
           >
-            <Typography component={'span'}className="accordiantype"><h4>Photo Gallery</h4></Typography>
+            <Typography component={"span"} className="accordiantype">
+              <h4>Photo Gallery</h4>
+            </Typography>
           </AccordionSummary>
           <AccordionDetails className="accordian">
             <div>
@@ -117,18 +121,22 @@ const PlaceDetail = () => {
             aria-controls="panel2a-content"
             id="panel2a-header"
             sx={{
-              bgcolor: 'antiquewhite',
+              bgcolor: "antiquewhite",
             }}
           >
-            <Typography component={'span'}className="accordiantype"><h4>Add to the Story</h4></Typography>
+            <Typography component={"span"} className="accordiantype">
+              <h4>Add to the Story</h4>
+            </Typography>
           </AccordionSummary>
           <AccordionDetails className="accordian">
-          {authCtx.token ? (
-          <div className="addinfo">
-            <CommentForm place={place} />
-            <AddPhotos place={place} />
-          </div>
-        ) : <p>Log into your account to be able to add stories and photos.</p>}
+            {authCtx.token ? (
+              <div className="addinfo">
+                <CommentForm place={place} />
+                <AddPhotos place={place} />
+              </div>
+            ) : (
+              <p>Log into your account to be able to add stories and photos.</p>
+            )}
           </AccordionDetails>
         </Accordion>
       </div>
