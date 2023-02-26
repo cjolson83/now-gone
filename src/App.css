@@ -133,6 +133,7 @@ body {
 
 .description {
   width: 80%;
+  text-align: left;
 }
 
 .placephoto {
@@ -256,6 +257,9 @@ body {
   margin-bottom: 35px;
 }
 
+p{
+ white-space: pre-wrap
+}
 
 
 .map-h2 {

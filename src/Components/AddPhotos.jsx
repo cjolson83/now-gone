@@ -5,6 +5,7 @@ import Fab from "@mui/material/Fab";
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
 import AuthContext from "../store/AuthContext";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const AddPhotos = ({ place }) => {
   const [photoURL, setPhotoURL] = useState("");
@@ -12,6 +13,7 @@ const AddPhotos = ({ place }) => {
   const [photoCaption, setPhotoCaption] = useState("");
   const { token, userId } = useContext(AuthContext);
   const placeId = place.id;
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -33,7 +35,7 @@ const AddPhotos = ({ place }) => {
         }
       )
       .then(() => {
-        document.location.reload();
+        window.location.reload();
       })
       .catch((err) => console.log(err));
   };
