@@ -5,7 +5,7 @@ const PlacePreview = ({ places }) => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate(`/api/places/${places.id}`);
+    navigate(`/places/${places.id}`);
   };
 
   return (

@@ -35,7 +35,7 @@ const AddPhotos = ({ place }) => {
         }
       )
       .then(() => {
-        navigate("/")
+        navigate(`/places/${place.id}`)
       })
       .catch((err) => console.log(err));
   };

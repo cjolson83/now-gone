@@ -13,6 +13,10 @@ const CommentForm = ({place}) => {
   const placeId = place.id
   const navigate = useNavigate();
 
+  function refreshPage() {
+    window.location.reload(false);
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -31,7 +35,7 @@ const CommentForm = ({place}) => {
         }
       )
       .then(() => {
-        navigate(`/api/places/${place.id}`);
+        {refreshPage()};
       })
       .catch((err) => console.log(err));
   };
