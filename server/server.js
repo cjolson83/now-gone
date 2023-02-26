@@ -28,6 +28,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+app.use(express.static(path.resolve(__dirname, "../build")));
+
 User.hasMany(Place);
 Place.belongsTo(User);
 
@@ -57,6 +59,10 @@ app.post("/api/comments", comment);
 app.get("/api/comments/:id", getComments);
 
 app.post("/api/photos", addPhoto);
+
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, '../build', 'index.html'));
+});
 
 sequelize
   // .sync({force: true}).then(()=> seedDatabase())
