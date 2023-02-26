@@ -2,8 +2,9 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 
-const { REACT_APP_PORT } = process.env;
+const { PORT } = process.env;
 const { sequelize } = require("./util/database");
+const path = require('path');
 
 const { Comment } = require("./models/comment");
 const { Photo } = require("./models/photo");
@@ -68,6 +69,6 @@ sequelize
   // .sync({force: true}).then(()=> seedDatabase())
   .sync()
   .then(() => {
-    app.listen(REACT_APP_PORT, () => console.log(`Up on ${REACT_APP_PORT}`));
+    app.listen(PORT, () => console.log(`Up on ${PORT}`));
   })
   .catch((err) => console.log(err));
