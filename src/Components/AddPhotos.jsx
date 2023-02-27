@@ -52,8 +52,9 @@ const AddPhotos = ({ place }) => {
         value={photoURL}
         onChange={(e) => setPhotoURL(e.target.value)}
       />
+      <div className="lowerphotodiv">
       <TextField
-        className="photo_caption"
+        className="photocaption"
         label="Photo Caption / Credit"
         sx={{ mb: "15px" }}
         variant="outlined"
@@ -80,6 +81,7 @@ const AddPhotos = ({ place }) => {
       >
         <AddPhotoAlternateIcon />
       </Fab>
+      </div>
       </div>
     </div>
     </div>

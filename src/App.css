@@ -71,10 +71,16 @@ body {
 .addphotoform {
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   box-sizing: border-box;
   margin-top: 13px;
   margin-bottom: 15px;
+}
+
+.lowerphotodiv {
+  display: flex;
+  justify-content: space-between;
 }
 
 .photoinput {
@@ -145,7 +151,7 @@ body {
 
 .comment {
   margin-bottom: 10px;
-  width: 92%;
+  width: 92.3%;
 }
 
 .commenttext {
@@ -291,11 +297,11 @@ p {
 }
 
 .photocaption {
-  width: 70%;
+  width: 75%;
 }
 
 .photoyear {
-  width: 25%;
+  width: 30%;
 }
 
 .address {
@@ -307,7 +313,7 @@ p {
 }
 
 .photo_url {
-  width: 40%;
+  width: 92.3%;
 }
 
 .photo_caption {
@@ -384,6 +390,10 @@ p {
 
   .photo_url {
     width: 100%;
+  }
+
+  .lowerphotodiv {
+    flex-direction: column;
   }
 
   .photo_caption {
