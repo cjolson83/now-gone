@@ -3,6 +3,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { useContext } from "react";
 import AuthContext from "./store/AuthContext";
 
+
 import Header from "./Components/Header";
 import Home from "./Components/Home";
 import Auth from "./Components/Auth";

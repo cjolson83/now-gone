@@ -68,6 +68,7 @@ const AddPhotos = ({ place }) => {
         value={yearTaken}
         onChange={(e) => setYearTaken(e.target.value)}
       />
+      <div>
       <Fab
         size="medium"
         aria-label="add"
@@ -79,6 +80,7 @@ const AddPhotos = ({ place }) => {
       >
         <AddPhotoAlternateIcon />
       </Fab>
+      </div>
     </div>
     </div>
   );

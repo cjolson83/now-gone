@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import TextField from "@mui/material/TextField";
-import { FormControl } from "@mui/material";
 import Fab from "@mui/material/Fab";
 import axios from "axios";
 import AuthContext from "../store/AuthContext";
@@ -44,11 +43,13 @@ const CommentForm = ({ place }) => {
     <div className="commentform">
         <TextField
           className="comment"
+          sx={{ mb: "15px" }}
           label="Comment"
           variant="outlined"
           value={comment}
           onChange={(e) => setComment(e.target.value)}
         />
+        <div>
       <Fab
         size="medium"
         aria-label="add"
@@ -60,6 +61,7 @@ const CommentForm = ({ place }) => {
       >
         <AddCommentIcon />
       </Fab>
+      </div>
     </div>
     </div>
   );

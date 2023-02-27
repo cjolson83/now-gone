@@ -311,7 +311,7 @@ p {
 }
 
 .photo_caption {
-  width: 30%;
+  width: 100%;
 }
 
 .year_taken {
@@ -375,6 +375,7 @@ p {
 
   .commentform {
     flex-direction: column;
+    margin-bottom: 25px;
   }
 
   .addphotoform {
