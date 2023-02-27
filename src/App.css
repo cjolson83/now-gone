@@ -151,7 +151,7 @@ body {
 .description {
   width: 80%;
   text-align: left;
-  height: 450px;
+  max-height: 450px;
   overflow: auto;
 }
 
