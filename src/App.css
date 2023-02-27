@@ -73,7 +73,7 @@ body {
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
-  margin-top: 25px;
+  margin-top: 13px;
   margin-bottom: 15px;
 }
 
@@ -85,6 +85,12 @@ body {
 .photosize {
   font-size: 10pt;
   margin-top: 0px;
+}
+
+.photoadd{
+  font-size: 10pt;
+  margin-bottom: 0px;
+  margin-top: 20px;
 }
 
 .commentform {
@@ -139,7 +145,7 @@ body {
 
 .comment {
   margin-bottom: 10px;
-  width: 90%;
+  width: 92%;
 }
 
 .commenttext {
@@ -403,4 +409,9 @@ p {
   h4 {
     margin: 10px;
   }
+
+  .comment {
+    width: 100%;
+  }
+
 }

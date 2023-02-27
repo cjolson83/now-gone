@@ -41,6 +41,8 @@ const AddPhotos = ({ place }) => {
   };
 
   return (
+    <div>
+    <p className="photoadd">Add a Photo</p>
     <div className="addphotoform">
       <TextField
         className="photo_url"
@@ -77,6 +79,7 @@ const AddPhotos = ({ place }) => {
       >
         <AddPhotoAlternateIcon />
       </Fab>
+    </div>
     </div>
   );
 };

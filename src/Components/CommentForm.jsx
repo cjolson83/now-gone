@@ -39,17 +39,16 @@ const CommentForm = ({ place }) => {
   };
 
   return (
+    <div>
+    <p className="photosize">Add a Story</p>
     <div className="commentform">
-      <FormControl sx={{ width: "92%" }}>
         <TextField
-          id="photo_url"
+          className="comment"
           label="Comment"
           variant="outlined"
-          helperText="Add a story about this place"
           value={comment}
           onChange={(e) => setComment(e.target.value)}
         />
-      </FormControl>
       <Fab
         size="medium"
         aria-label="add"
@@ -61,6 +60,7 @@ const CommentForm = ({ place }) => {
       >
         <AddCommentIcon />
       </Fab>
+    </div>
     </div>
   );
 };
