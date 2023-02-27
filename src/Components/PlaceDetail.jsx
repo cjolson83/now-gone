@@ -107,10 +107,12 @@ const PlaceDetail = () => {
           >
             <Typography component={"span"} className="accordiantype">
               <h4>Photo Gallery</h4>
+
             </Typography>
           </AccordionSummary>
           <AccordionDetails className="accordian">
             <div>
+            <p className="photosize">Click to see full-size photos</p>
               <ModalUnstyledDemo place={place} />
             </div>
           </AccordionDetails>

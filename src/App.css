@@ -82,6 +82,11 @@ body {
   justify-content: space-between;
 }
 
+.photosize {
+  font-size: 10pt;
+  margin-top: 0px;
+}
+
 .commentform {
   display: flex;
   justify-content: space-between;
@@ -146,10 +151,12 @@ body {
 .description {
   width: 80%;
   text-align: left;
+  height: 450px;
+  overflow: auto;
 }
 
 .placephoto {
-  width: 100%;
+  width: 80%;
   border-radius: 5px;
 }
 
@@ -382,5 +389,18 @@ p {
 
   .nowGone {
     line-height: 100%;
+    font-size: 45pt;
+  }
+
+  .placephoto {
+    width: 90%;
+  }
+
+  .description {
+    width: 100%;
+  }
+
+  h4 {
+    margin: 10px;
   }
 }
