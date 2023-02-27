@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import TextField from "@mui/material/TextField";
-import { FormControl } from "@mui/material";
 import Fab from "@mui/material/Fab";
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
 import AuthContext from "../store/AuthContext";
@@ -43,34 +42,30 @@ const AddPhotos = ({ place }) => {
 
   return (
     <div className="addphotoform">
-      <FormControl sx={{ width: "40%" }}>
-        <TextField
-          id="photo_url"
-          label="Photo URL"
-          variant="outlined"
-          helperText="Add a photo to the collection"
-          value={photoURL}
-          onChange={(e) => setPhotoURL(e.target.value)}
-        />
-      </FormControl>
-      <FormControl sx={{ width: "30%" }}>
-        <TextField
-          id="photo_caption"
-          label="Photo Caption / Credit"
-          variant="outlined"
-          value={photoCaption}
-          onChange={(e) => setPhotoCaption(e.target.value)}
-        />
-      </FormControl>
-      <FormControl sx={{ width: "15%" }}>
-        <TextField
-          id="year_taken"
-          label="Photo Year"
-          variant="outlined"
-          value={yearTaken}
-          onChange={(e) => setYearTaken(e.target.value)}
-        />
-      </FormControl>
+      <TextField
+        className="photo_url"
+        label="Photo URL"
+        variant="outlined"
+        sx={{ mb: "15px" }}
+        value={photoURL}
+        onChange={(e) => setPhotoURL(e.target.value)}
+      />
+      <TextField
+        className="photo_caption"
+        label="Photo Caption / Credit"
+        sx={{ mb: "15px" }}
+        variant="outlined"
+        value={photoCaption}
+        onChange={(e) => setPhotoCaption(e.target.value)}
+      />
+      <TextField
+        className="year_taken"
+        sx={{ mb: "15px" }}
+        label="Photo Year"
+        variant="outlined"
+        value={yearTaken}
+        onChange={(e) => setYearTaken(e.target.value)}
+      />
       <Fab
         size="medium"
         aria-label="add"

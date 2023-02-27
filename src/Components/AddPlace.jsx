@@ -133,10 +133,10 @@ const AddPlace = () => {
           />
           <div className="datescontainer">
             <TextField
+              className="dateinput"
               id="dateopened"
               label="Date Opened"
               type="date"
-              sx={{ width: 220 }}
               InputLabelProps={{
                 shrink: true,
               }}
@@ -144,10 +144,10 @@ const AddPlace = () => {
               onChange={(e) => setDateOpen(e.target.value)}
             />
             <TextField
+              className="dateinput"
               id="dateclosed"
               label="Date Closed"
               type="date"
-              sx={{ width: 220 }}
               InputLabelProps={{
                 shrink: true,
               }}
@@ -195,37 +195,35 @@ const AddPlace = () => {
             value={thereNow}
             onChange={(e) => setThereNow(e.target.value)}
           />
-          <Stack component="form" noValidate spacing={3}>
-            <FormControl sx={{ width: "100%" }}>
-              <TextField
-                id="photo_url"
-                label="Photo URL"
-                variant="outlined"
-                value={photoURL}
-                onChange={(e) => setPhotoURL(e.target.value)}
-              />
-            </FormControl>
-            <div className="photoinput">
-              <FormControl sx={{ width: "70%" }}>
-                <TextField
-                  id="photo_caption"
-                  label="Photo Caption / Credit"
-                  variant="outlined"
-                  value={photoCaption}
-                  onChange={(e) => setPhotoCaption(e.target.value)}
-                />
-              </FormControl>
-              <FormControl sx={{ width: "25%" }}>
-                <TextField
-                  id="year_taken"
-                  label="Photo Year"
-                  variant="outlined"
-                  value={yearTaken}
-                  onChange={(e) => setYearTaken(e.target.value)}
-                />
-              </FormControl>
-            </div>
-          </Stack>
+          <FormControl sx={{ width: "100%" }}>
+            <TextField
+              id="photo_url"
+              label="Photo URL"
+              variant="outlined"
+              value={photoURL}
+              onChange={(e) => setPhotoURL(e.target.value)}
+            />
+          </FormControl>
+          <div className="photoinput">
+            <TextField
+              className="photocaption"
+              sx={{ mb: "27px" }}
+              id="photo_caption"
+              label="Photo Caption / Credit"
+              variant="outlined"
+              value={photoCaption}
+              onChange={(e) => setPhotoCaption(e.target.value)}
+            />
+
+            <TextField
+              className="photoyear"
+              id="year_taken"
+              label="Photo Year"
+              variant="outlined"
+              value={yearTaken}
+              onChange={(e) => setYearTaken(e.target.value)}
+            />
+          </div>
           <div className="bottomformdiv">
             <Button
               size="large"

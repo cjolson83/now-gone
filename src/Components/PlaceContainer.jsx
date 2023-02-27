@@ -8,6 +8,7 @@ const PlaceContainer = ({ places }) => {
   const [searchLocation, setSearchLocation] = useState("");
   const [searchBy, setSearchBy] = useState(false);
   const placeDisplay = places
+    .sort((a, b) => a.placeName.localeCompare(b.placeName))
     .filter((places, index) => {
       let query = places.location.toLowerCase();
       let searchParams = searchLocation.toLowerCase();

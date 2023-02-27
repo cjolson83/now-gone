@@ -64,7 +64,7 @@ const PlaceDetail = () => {
         />
       )}
       <div className="placeInfo">
-        <h3>{place.location}</h3>
+        <h3 className="address">{place.location}</h3>
         <div className="daterange">
           <h4>Opened: {place.dateOpen}</h4>
           <HourglassDisabledOutlinedIcon />

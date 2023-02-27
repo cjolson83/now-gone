@@ -88,7 +88,6 @@ body {
 }
 
 .placename {
-  font-family: "Sawarabi Mincho", serif;
   margin-bottom: 10px;
   width: 55vw;
 }
@@ -130,7 +129,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0px
+  margin: 0px;
 }
 
 .comment {
@@ -138,7 +137,7 @@ body {
   width: 90%;
 }
 
-.commenttext{
+.commenttext {
   width: 100%;
   text-align: left;
   white-space: pre-wrap;
@@ -234,7 +233,7 @@ body {
 }
 
 .search_places {
-  width: 25%;
+  width: 250px;
 }
 
 .deletebutton {
@@ -272,4 +271,116 @@ body {
 
 p {
   white-space: pre-wrap;
+}
+
+.dateinput {
+  width: 35%;
+}
+
+.photocaption {
+  width: 70%;
+}
+
+.photoyear {
+  width: 25%;
+}
+
+.address {
+  width: 100%;
+}
+
+.placename {
+  width: 100%;
+}
+
+.photo_url {
+  width: 40%;
+}
+
+.photo_caption {
+  width: 30%;
+}
+
+.year_taken {
+  width: 15%;
+}
+
+@media (max-width: 700px) {
+  .placecontainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .placemainimage {
+    width: 85%;
+  }
+
+  .placepreview {
+    width: 95%;
+    margin-bottom: 15px;
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
+  .datescontainer {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 27px;
+  }
+
+  .dateinput {
+    width: 100%;
+  }
+
+  .bottomformdiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .photoinput {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .photocaption {
+    width: 100%;
+  }
+
+  .photoyear {
+    width: 100%;
+  }
+
+  .daterange {
+    flex-direction: column;
+  }
+
+  .photocard {
+    width: 100%;
+  }
+
+  .commentform {
+    flex-direction: column;
+  }
+
+  .addphotoform {
+    flex-direction: column;
+  }
+
+  .photo_url {
+    width: 100%;
+  }
+
+  .photo_caption {
+    width: 100%;
+  }
+
+  .year_taken {
+    width: 100%;
+  }
+
+  .nowGone {
+    line-height: 100%;
+  }
 }
