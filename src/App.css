@@ -168,7 +168,7 @@ body {
 }
 
 .placephoto {
-  width: 80%;
+  width: 100%;
   border-radius: 5px;
 }
 
@@ -410,7 +410,7 @@ p {
   }
 
   .placephoto {
-    width: 90%;
+    width: 145%;
   }
 
   .description {

@@ -44,13 +44,6 @@ const Backdrop = styled(BackdropUnstyled)`
   -webkit-tap-highlight-color: transparent;
 `;
 
-// const style = (theme) => ({
-//   width: "100%",
-//   display: "flex",
-//   fledDirection: "column",
-//   alignItems: "center"
-
-// });
 
 export default function ModalUnstyledDemo({ place }) {
   const [showImageModal, setShowImageModal] = useState(false);
@@ -81,7 +74,8 @@ export default function ModalUnstyledDemo({ place }) {
               >
                 <Box sx={{ display: "flex",
               flexDirection: "column",
-              alignItems: "center" }}>
+              alignItems: "center",
+              width: "50%" }}>
                   <img
                     className="placephoto"
                     alt="place"
