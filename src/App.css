@@ -93,7 +93,7 @@ body {
   margin-top: 0px;
 }
 
-.photoadd{
+.photoadd {
   font-size: 10pt;
   margin-bottom: 0px;
   margin-top: 20px;
@@ -293,15 +293,15 @@ p {
 }
 
 .dateinput {
-  width: 35%;
+  width: 30%;
 }
 
 .photocaption {
-  width: 75%;
+  width: 70%;
 }
 
 .photoyear {
-  width: 30%;
+  width: 25%;
 }
 
 .address {
@@ -322,6 +322,13 @@ p {
 
 .year_taken {
   width: 15%;
+}
+
+.buildinstands {
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
 @media (max-width: 1024px) {
@@ -430,4 +437,9 @@ p {
     margin: 50px;
   }
 
+  .buildinstands {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
 }

@@ -36,6 +36,10 @@ const AddPlace = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if (placeName === '' || location === '' || description === '' || photoURL === '' || yearTaken === '' || yearTaken.length > 4 || photoCaption === '') {
+      alert ('All form fields must be filled out')
+      return
+    } else {
     axios
       .post(
         "/api/places",
@@ -63,6 +67,7 @@ const AddPlace = () => {
         navigate("/");
       })
       .catch((err) => console.log(err));
+    }
   };
 
   useEffect(() => {
@@ -154,9 +159,7 @@ const AddPlace = () => {
               value={dateClose}
               onChange={(e) => setDateClose(e.target.value)}
             />
-            <FormControl sx={{width: "100%", display: "flex",
-                justifyContent: "space-around"
-                }}>
+            <FormControl className="buildinstands">
               <FormLabel
                 id="demo-row-radio-buttons-group-label"
                 sx={{
@@ -167,11 +170,10 @@ const AddPlace = () => {
                 Building Stands?
               </FormLabel>
               <RadioGroup
+              sx={{width: "100%",
+            display: "flex",
+          justifyContent: "space-around"}}
                 row
-                sx={{width: "100%",
-                  display: "flex",
-                justifyContent: "space-around"
-                }}
                 aria-labelledby="demo-row-radio-buttons-group-label"
                 name="row-radio-buttons-group"
                 value={buildingStands}
