@@ -37,7 +37,7 @@ const AddPlace = () => {
     e.preventDefault();
 
     if (placeName === '' || location === '' || description === '' || photoURL === '' || yearTaken === '' || yearTaken.length > 4 || photoCaption === '') {
-      alert ('All form fields must be filled out')
+      alert ('All form fields must be filled out correctly')
       return
     } else {
     axios
