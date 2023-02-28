@@ -23,13 +23,17 @@ const Auth = () => {
       username,
       password,
     };
+    if (username.length < 5 || password.length < 5) {
+      alert ('Usernames and passwords must be at least 5 characters long')
+      return
+    } else {
     axios
       .post(register ? "/api/register" : "/api/login", body)
       .then((res) => {
         authCtx.login(res.data.token, res.data.exp, res.data.userId);
       })
       .catch((err) => alert(err.response.data));
-  };
+  }};
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
 
