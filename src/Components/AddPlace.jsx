@@ -154,18 +154,24 @@ const AddPlace = () => {
               value={dateClose}
               onChange={(e) => setDateClose(e.target.value)}
             />
-            <FormControl>
+            <FormControl sx={{width: "100%", display: "flex",
+                justifyContent: "space-around"
+                }}>
               <FormLabel
                 id="demo-row-radio-buttons-group-label"
                 sx={{
                   fontSize: 16,
-                  textAlign: "left",
+                  textAlign: "center",
                 }}
               >
                 Building Stands?
               </FormLabel>
               <RadioGroup
                 row
+                sx={{width: "100%",
+                  display: "flex",
+                justifyContent: "space-around"
+                }}
                 aria-labelledby="demo-row-radio-buttons-group-label"
                 name="row-radio-buttons-group"
                 value={buildingStands}
