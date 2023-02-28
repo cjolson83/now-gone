@@ -8,8 +8,6 @@ const PlacePreview = ({ places }) => {
     navigate(`/places/${places.id}`);
   };
 
-  console.log(places.photos.slice(-1)[0].photoURL)
-
   return (
     <div
       className="placepreview"
