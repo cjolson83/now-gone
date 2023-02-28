@@ -8,6 +8,8 @@ const PlacePreview = ({ places }) => {
     navigate(`/places/${places.id}`);
   };
 
+  console.log(places.photos.slice(-1)[0].photoURL)
+
   return (
     <div
       className="placepreview"
@@ -16,7 +18,7 @@ const PlacePreview = ({ places }) => {
           190deg,
           rgba(0, 0, 0, 0.5),
           rgba(0, 0, 0, 0.5)),
-          url(${places.photos[0].photoURL})`,
+          url(${places.photos.slice(-1)[0].photoURL})`,
         backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "center",
