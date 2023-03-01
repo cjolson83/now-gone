@@ -302,13 +302,18 @@ p {
   width: 30%;
 }
 
+.photo_caption {
+  width: 100%;
+}
+
+.photocaptionadd{
+  width: 72%;
+}
+
 .photoyear {
   width: 25%;
 }
 
-.photo_caption {
-  width: 100%;
-}
 
 .address {
   width: 100%;
@@ -377,6 +382,10 @@ p {
   }
 
   .photocaption {
+    width: 100%;
+  }
+
+  .photocaptionadd{
     width: 100%;
   }
 

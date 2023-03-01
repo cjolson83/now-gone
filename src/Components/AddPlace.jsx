@@ -214,7 +214,7 @@ const AddPlace = () => {
           </FormControl>
           <div className="photoinput">
             <TextField
-              className="photocaption"
+              className="photocaptionadd"
               sx={{ mb: "27px" }}
               id="photo_caption"
               label="Photo Caption / Credit"
