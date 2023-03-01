@@ -84,7 +84,7 @@ body {
 }
 
 .captionyeardiv{
-  width: 56svw;
+  width: 92%;
   display: flex;
   justify-content: space-between;
 }
@@ -157,7 +157,7 @@ body {
 
 .comment {
   margin-bottom: 10px;
-  width: 56svw;
+  width: 92%;
 }
 
 .commenttext {
@@ -324,15 +324,15 @@ p {
 }
 
 .photo_url {
-  width: 56svw;
+  width: 92%;
 }
 
 .photocaption {
-  width: 45svw;
+  width: 78%;
 }
 
 .year_taken {
-  width: 9svw;
+  width: 20%;
 }
 
 .buildinstands {
