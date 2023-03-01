@@ -83,6 +83,12 @@ body {
   justify-content: space-between;
 }
 
+.captionyeardiv{
+  width: 56svw;
+  display: flex;
+  justify-content: space-between;
+}
+
 .photoinput {
   display: flex;
   justify-content: space-between;
@@ -151,7 +157,7 @@ body {
 
 .comment {
   margin-bottom: 10px;
-  width: 92.3%;
+  width: 56svw;
 }
 
 .commenttext {
@@ -296,12 +302,12 @@ p {
   width: 30%;
 }
 
-.photocaption {
-  width: 74%;
-}
-
 .photoyear {
   width: 25%;
+}
+
+.photo_caption {
+  width: 100%;
 }
 
 .address {
@@ -313,15 +319,15 @@ p {
 }
 
 .photo_url {
-  width: 92.3%;
+  width: 56svw;
 }
 
-.photo_caption {
-  width: 100%;
+.photocaption {
+  width: 45svw;
 }
 
 .year_taken {
-  width: 16.3%;
+  width: 9svw;
 }
 
 .buildinstands {

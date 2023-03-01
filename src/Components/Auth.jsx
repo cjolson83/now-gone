@@ -23,8 +23,8 @@ const Auth = () => {
       username,
       password,
     };
-    if (username.length < 5 || password.length < 5) {
-      alert ('Usernames and passwords must be at least 5 characters long')
+    if (username.length < 5 || password.length < 1) {
+      alert ('Usernames must be at least 5 characters long')
       return
     } else {
     axios

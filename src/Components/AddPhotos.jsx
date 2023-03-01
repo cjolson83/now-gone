@@ -53,6 +53,7 @@ const AddPhotos = ({ place }) => {
         onChange={(e) => setPhotoURL(e.target.value)}
       />
       <div className="lowerphotodiv">
+        <div className="captionyeardiv">
       <TextField
         className="photocaption"
         label="Photo Caption / Credit"
@@ -69,6 +70,7 @@ const AddPhotos = ({ place }) => {
         value={yearTaken}
         onChange={(e) => setYearTaken(e.target.value)}
       />
+      </div>
       <div>
       <Fab
         size="medium"
